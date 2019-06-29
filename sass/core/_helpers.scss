@@ -1,0 +1,71 @@
+// Hide visually, seen by screenreaders.
+%sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
+}
+
+// Clearfix
+//
+// For modern browsers
+// 1. The space content is one way to avoid an Opera bug when the
+//    contenteditable attribute is included anywhere else in the document.
+//    Otherwise it causes space to appear at the top and bottom of elements
+//    that are clearfixed.
+// 2. The use of `table` rather than `block` is only necessary if using
+//    `:before` to contain the top-margins of child elements.
+//
+// Source: http://nicolasgallagher.com/micro-clearfix-hack/
+
+%clearfix {
+	&::before,
+	&::after {
+		content: " "; // 1
+		display: table; // 2
+	}
+	&::after {
+		clear: both;
+	}
+}
+
+// Clear default button styles
+%btn-no-style {
+	margin: 0;
+	padding: 0;
+	background: none;
+	border: none;
+	cursor: pointer;
+	
+	&:hover,
+	&:focus,
+	&:disabled,
+	&:active {
+		background: none;
+	}
+}
+
+// Clear defaul list (ul, ol) styles
+%list-no-style {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+// Show ellipsis when single-line text overflows
+%text-overflow {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+// Center content
+%center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

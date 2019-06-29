@@ -1,0 +1,81 @@
+/////////
+// Nav //
+/////////
+
+// Inctroduces classes: "nav-menu", "nav-submenu".
+// Affects elements with those classes and some of their descendants.
+
+// Variables
+$nav-primary-link-font-size:             $font-lg;
+$nav-link-padding:                       $padd-md;
+$nav-submenu-bg:                         $clr-bg-1;
+$nav-submenu-bord:                       $clr-bg-3;
+$nav-link-color:                         $clr-fg-2;
+$nav-link-hover-color:                   $clr-prim;
+$nav-link-active-color:                  $clr-prim;
+
+// Styles
+.nav-menu {
+	@extend %clearfix;
+	position: relative;
+	z-index: $z-layer-1 + 5;
+
+	&,
+	ul {
+		@extend %list-no-style;
+	}
+
+	a {
+		text-decoration: none;
+		color: $clr-body-text;
+		transition: $trans-norm;
+		color: $nav-link-color;
+	}
+
+	> li {
+		float: left;
+
+		> a {
+			display: inline-block;
+			padding: $nav-link-padding;
+
+			&:hover,
+			&:focus {
+				color: $nav-link-hover-color;
+			}
+
+			&.active {
+				color: $nav-link-active-color;
+			}
+		}
+	}
+}
+
+.nav-submenu {
+	position: absolute;
+	display: none;
+	margin-top: -1px;
+	background: $nav-submenu-bg;
+	border: $bord-xs $nav-submenu-bord;
+
+	.nav-menu > li > a:hover + &,
+	.nav-menu > li:focus-within > &,
+	&:hover {
+		display: block;
+		@include animation($trans-slow fade-in);
+	}
+
+	> li {
+		padding: $nav-link-padding;
+	}
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}

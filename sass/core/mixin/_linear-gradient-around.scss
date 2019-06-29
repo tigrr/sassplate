@@ -1,0 +1,8 @@
+// Linear gradient around $color. Goes from light to dark.
+@mixin linear-gradient-around($to, $color, $diff: 5%) {
+	$clr1: lighten($color, $diff / 2);
+	$clr2: darken($clr1, $diff);
+
+	background-color: $color;
+	background-image: linear-gradient(to $to, $clr1, $clr2);
+}

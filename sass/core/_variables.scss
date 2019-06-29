@@ -1,0 +1,59 @@
+///////////////
+// Variables //
+///////////////
+
+// Variables are used by components. You are free to add and modify any variable, but not delete.
+
+
+@import "variables/colors";
+@import "variables/typography";
+@import "variables/metrics";
+@import "variables/3d";
+
+
+
+
+// =======
+//  OTHER
+// =======
+
+// Image directory for "img-url" function
+// Must end with "/"
+$imgDir:                "../img/";
+
+// Transition durations
+$trans-fast:            .15s;
+$trans-norm:            .25s;
+$trans-slow:            .5s;
+
+// Media queries breakpoints
+$scr-xs:                480px;
+$scr-sm:                768px;
+$scr-md:                992px;
+$scr-lg:                1200px;
+
+// Same values as a map, for use by minscreen and maxscreen mixins.
+$minscreen: (
+    xs: $scr-xs,
+    sm: $scr-sm,
+    md: $scr-md,
+    lg: $scr-lg
+);
+$maxscreen: (
+    xs: $scr-xs - 1,
+    sm: $scr-sm - 1,
+    md: $scr-md - 1,
+    lg: $scr-lg - 1
+);
+
+
+
+
+
+
+
+// ==================
+//  PROJECT SPESIFIC
+// ==================
+
+// Continue from here...

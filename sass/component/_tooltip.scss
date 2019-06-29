@@ -1,0 +1,192 @@
+/////////////
+// Tooltip //
+/////////////
+
+// Affects all elements with "aria-label" attribute.
+// Adds extend-only selectors: %tooltip-s, %tooltip-n, %tooltip-e, %tooltip-w
+// Uses $tooltip-padding, $tooltip-background-color, $tooltip-text-color, $tooltip-transition-duration
+// Default tooltip position is at the bottom (south).
+
+// Variables
+$tooltip-padding:             $padd-sm;
+$tooltip-background-color:    $clr-fg;
+$tooltip-text-color:          $clr-bg;
+$tooltip-transition-duration: $trans-norm;
+$tooltip-arrow-half-width:    6px;
+$tooltip-offset:              3px;
+$tooltip-offset-incl-arrow:   $tooltip-arrow-half-width + $tooltip-offset;
+
+// Styles
+.has-tooltip {
+	position: relative;
+
+	&::after {
+		content: attr(aria-label);
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		z-index: $z-layer-tooltip;
+		padding: $tooltip-padding;
+		white-space: nowrap;
+		background: $tooltip-background-color;
+		border-radius: 5px;
+		color: $tooltip-text-color;
+		transition: $tooltip-transition-duration 0s;
+		text-align: center;
+		text-decoration: none;
+		text-shadow: none;
+		text-transform: none;
+		letter-spacing: normal;
+		word-wrap: break-word;
+		white-space: pre;
+		pointer-events: none;
+		font: normal $font-sm / normal $type-body;
+	}
+	// The arrow
+	&::before {
+		content: "";
+		visibility: hidden;
+		opacity: 0;
+		position: absolute;
+		z-index: $z-layer-tooltip;
+		width: 0;
+		height: 0;
+		transition: $tooltip-transition-duration 0s;
+		border: $tooltip-arrow-half-width solid transparent;
+		pointer-events: none;
+	}
+	&:hover,
+	&:focus,
+	&.tooltip-open {
+		&::after,
+		&::before {
+			visibility: visible;
+			opacity: 1;
+			transition-delay: .3s;
+		}
+	}
+
+	// Positions
+	&%tooltip-s {
+		&::after {
+			left: 50%;
+			bottom: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 100%));
+		}
+		&::before {
+			left: 50%;
+			bottom: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 0));
+			border-color: transparent;
+			border-bottom-color: $tooltip-background-color;
+		}
+	}
+	&%tooltip-n {
+		&::after {
+			left: 50%;
+			top: -$tooltip-offset-incl-arrow;
+			bottom: auto;
+			@include transform(translate(-50%, -100%));
+		}
+		&::before {
+			left: 50%;
+			top: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 0));
+			border-color: transparent;
+			border-top-color: $tooltip-background-color;
+		}
+	}
+	&%tooltip-w {
+		&::after {
+			left: -$tooltip-offset-incl-arrow;
+			bottom: 50%;
+			@include transform(translate(-100%, 50%));
+		}
+		&::before {
+			left: -$tooltip-offset-incl-arrow;
+			bottom: 50%;
+			@include transform(translate(0, 50%));
+			border-color: transparent;
+			border-left-color: $tooltip-background-color;
+		}
+	}
+	&%tooltip-e {
+		&::after {
+			left: auto;
+			right: -$tooltip-offset-incl-arrow;
+			bottom: 50%;
+			@include transform(translate(100%, 50%));
+		}
+		&::before {
+			left: auto;
+			right: -$tooltip-offset-incl-arrow;
+			bottom: 50%;
+			@include transform(translate(0, 50%));
+			border-color: transparent;
+			border-right-color: $tooltip-background-color;
+		}
+	}
+	// In angles
+	&%tooltip-se {
+		&::after {
+			left: 0;
+			bottom: -$tooltip-offset-incl-arrow;
+			@include transform(translate(0, 100%));
+		}
+		&::before {
+			left: 50%;
+			bottom: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 0));
+			border-color: transparent;
+			border-bottom-color: $tooltip-background-color;
+		}
+	}
+	&%tooltip-sw {
+		&::after {
+			left: auto;
+			right: 0;
+			bottom: -$tooltip-offset-incl-arrow;
+			@include transform(translate(0, 100%));
+		}
+		&::before {
+			left: 50%;
+			bottom: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 0));
+			border-color: transparent;
+			border-bottom-color: $tooltip-background-color;
+		}
+	}
+	&%tooltip-ne {
+		&::after {
+			left: 0;
+			top: -$tooltip-offset-incl-arrow;
+			bottom: auto;
+			@include transform(translate(0, -100%));
+		}
+		&::before {
+			left: 50%;
+			top: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 0));
+			border-color: transparent;
+			border-top-color: $tooltip-background-color;
+		}
+	}
+	&%tooltip-nw {
+		&::after {
+			left: auto;
+			right: 0;
+			top: -$tooltip-offset-incl-arrow;
+			bottom: auto;
+			@include transform(translate(0, -100%));
+		}
+		&::before {
+			left: 50%;
+			top: -$tooltip-offset-incl-arrow;
+			@include transform(translate(-50%, 0));
+			border-color: transparent;
+			border-top-color: $tooltip-background-color;
+		}
+	}
+
+	@extend %tooltip-s;
+}

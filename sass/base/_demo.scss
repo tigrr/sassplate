@@ -1,0 +1,344 @@
+///////////////////
+// Global Styles //
+///////////////////
+
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+[aria-hidden=true] {
+	display: none;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: $type-monospace;
+}
+
+
+
+
+
+
+// Extend helper extend-only classes into normal css classes.
+// Delete the extended classes if you don't intend to use them.
+// For documentation for individual classes, see core/_helpers.scss
+
+.sr-only {
+	@extend %sr-only;
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+
+.hide {
+	display: none !important;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+.btn-no-style {
+	@extend %btn-no-style;
+}
+
+.list-no-style {
+	@extend %list-no-style;
+}
+
+nav > ul {
+	@extend %list-no-style;
+}
+
+
+body {
+	margin: $marg-sm;
+	background: $clr-body-bg;
+	color: $clr-body-text;
+	font-family: $type-body;
+	@include minscreen(md) {
+		margin: $marg-lg;
+	}
+}
+
+.container {
+	max-width: 1100px;
+	margin: auto;
+	padding: $marg-lg;
+	border: $bord-xs $clr-bg-4;
+	box-shadow: $box-shad-1;
+}
+
+@include minscreen(md) {
+	.flex {
+		display: flex;
+		> * {
+			flex: 1 1 0;
+			padding: $padd-md;
+		}
+	}
+}
+
+.inline-block-md {
+	display: inline-block;
+	margin: $marg-md $marg-lg;
+	padding: $padd-sm;
+}
+
+
+
+
+
+.demo-page-section {
+	margin-top: 80px;
+}
+
+.demo-page-subsection {
+	margin-top: 50px;
+}
+
+
+.has-tooltip {
+	padding: $padd-sm;
+	background: $clr-bg-2;
+	cursor: default;
+}
+
+.tooltip-top {
+	@extend %tooltip-n;
+}
+
+.tooltip-left {
+	@extend %tooltip-w;
+}
+
+.tooltip-right {
+	@extend %tooltip-e;
+}
+
+.tooltip-se {
+	@extend %tooltip-se;
+}
+
+.tooltip-sw {
+	@extend %tooltip-sw;
+}
+
+.tooltip-ne {
+	@extend %tooltip-ne;
+}
+
+.tooltip-nw {
+	@extend %tooltip-nw;
+}
+
+
+// Samples
+// Colors
+
+.color-sample {
+	display: inline-block;
+	padding: $padd-md;
+	min-width: 8em;
+	text-align: center;
+}
+
+.color-primary {
+	background: $clr-prim;
+}
+
+@if variable_exists(clr-scnd) {
+	.color-secondary {
+		background: $clr-scnd;
+	}
+} @else {
+	.color-secondary::after {
+		content: "Secondary color not set";
+		display: block;
+		color: $clr-danger;
+	}
+}
+
+.color-bg-1 {
+	background: $clr-bg-1;
+}
+
+.color-bg-2 {
+	background: $clr-bg-2;
+}
+
+.color-bg-3 {
+	background: $clr-bg-3;
+}
+
+.color-bg-4 {
+	background: $clr-bg-4;
+}
+
+.color-bg-5 {
+	background: $clr-bg-5;
+}
+
+.color-bg-6 {
+	background: $clr-bg-6;
+}
+
+
+.color-fg-1 {
+	background: $clr-fg-1;
+	color: $clr-bg;
+}
+
+.color-fg-2 {
+	background: $clr-fg-2;
+	color: $clr-bg;
+}
+
+.color-fg-3 {
+	background: $clr-fg-3;
+	color: $clr-bg;
+}
+
+.color-fg-4 {
+	background: $clr-fg-4;
+	color: $clr-bg;
+}
+
+.color-fg-5 {
+	background: $clr-fg-5;
+	color: $clr-bg;
+}
+
+.color-fg-6 {
+	background: $clr-fg-6;
+	color: $clr-bg;
+}
+
+
+.color-success {
+	background: $clr-success;
+}
+
+.color-danger {
+	background: $clr-danger;
+}
+
+.color-warning {
+	background: $clr-warning;
+}
+
+.color-info {
+	background: $clr-info;
+}
+
+
+// Paddings
+
+@each $size, $var in (xs: ($padd-xs, $bord-xs, $bord-rad-xs, $font-xs), sm: ($padd-sm, $bord-sm, $bord-rad-sm, $font-sm), md: ($padd-md, $bord-md, $bord-rad-md, $font-md), lg: ($padd-lg, $bord-lg, $bord-rad-lg, $font-lg), xl: ($padd-xl, $bord-xl, $bord-rad-xl, $font-xl),) {
+	.padding-#{$size} {
+		margin: 5px 0;
+		padding: nth($var, 1);
+		border: 1px solid $clr-bg-5;
+	}
+
+	.border-#{$size} {
+		margin: 5px 0;
+		padding: 20px;
+		border: nth($var, 2) $clr-fg;
+	}
+
+	.border-radius-#{$size} {
+		margin: 5px 0;
+		padding: 20px;
+		border: 1px solid $clr-bg-5;
+		border-radius: nth($var, 3);
+	}
+
+	.font-#{$size} {
+		margin: 5px 0;
+		font-size: nth($var, 4);
+	}
+}
+
+.font-xxl {
+	font-size: $font-xxl;
+}
+
+.font-xxxl {
+	font-size: $font-xxxl;
+}
+
+
+// Shadows
+
+.shadow-1 {
+	box-shadow: $box-shad-1;
+}
+
+.shadow-2 {
+	box-shadow: $box-shad-2;
+}
+
+.shadow-3 {
+	box-shadow: $box-shad-3;
+}
+
+.shadow-4 {
+	box-shadow: $box-shad-4;
+}
+
+.shadow-5 {
+	box-shadow: $box-shad-5;
+}
+
+
+// # Components
+// ## Radio group
+
+.radio-group {
+	@extend %clearfix;
+	@extend %radio-group;
+}
+
+.radio-group-vertical {
+	@extend %clearfix;
+	@extend %radio-group-vertical;
+}
+
+
+input[type=text],
+input[type=number],
+input[type=search],
+input[type=password],
+input[type=tel],
+input[type=email],
+input[type=url],
+input[type=datetime],
+input[type=datetime-local],
+input[type=date],
+input[type=time],
+input[type=month],
+input[type=week],
+textarea,
+select {
+	display: block;
+	width: 20em;
+}

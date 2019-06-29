@@ -1,0 +1,54 @@
+// ========
+//  COLORS
+// ========
+
+// Basic color scheme (2-4 colors)
+// All the other colors (except for "Other Common Colors" section) are computed based on these.
+// Main background color
+$clr-bg:                hsl(220, 0%, 100%);
+// Brand primary color
+$clr-prim:              hsl(200, 90%, 40%);
+// Brand secondary color
+$clr-scnd:              hsl( 40, 70%, 60%);
+
+// Foreground color, background color's contrast color, in use e.g. for text and borders.
+$clr-fg:                magicon($clr-bg, 80%);
+
+
+// Color variations (more than 20 is not advisable)
+// These colors should be computed based on the Basic colors. No literal color value should be used.
+$clr-bg-1:              magicon($clr-bg, 3%);
+$clr-fg-1:              magicon($clr-fg, 3%);
+
+$clr-bg-2:              magicon($clr-bg, 9%);
+$clr-fg-2:              magicon($clr-fg, 9%);
+
+$clr-bg-3:              magicon($clr-bg, 14%);
+$clr-fg-3:              magicon($clr-fg, 14%);
+
+$clr-bg-4:              magicon($clr-bg, 20%);
+$clr-fg-4:              magicon($clr-fg, 20%);
+
+$clr-bg-5:              magicon($clr-bg, 26%);
+$clr-fg-5:              magicon($clr-fg, 26%);
+
+$clr-bg-6:              magicon($clr-bg, 35%);
+$clr-fg-6:              magicon($clr-fg, 35%);
+// etc...
+
+
+// Other Common Colors (these may be out of basic color scheme) and should follow the established conventions.
+$clr-success:           hsl(120, 40%, 50%);
+$clr-danger:            hsl(0, 65%, 55%);
+$clr-warning:           hsl(35, 84%, 62%);
+$clr-info:              hsl(193, 80%, 57%);
+
+$clr-outline:           hsl(209, 62%, lightness(magicon($clr-bg, 40%)));
+$clr-link:              hsl(220, 70%, lightness(magicon($clr-bg, 50%)));
+$clr-link-hover:        hsl(220, 80%, lightness(magicon($clr-bg, 40%)));
+$clr-link-visited:      hsl(10, 60%, lightness(magicon($clr-bg, 50%)));
+
+// Backgrounds and Borders
+$clr-body-bg:           $clr-bg;
+// Text
+$clr-body-text:         $clr-fg;

@@ -1,0 +1,69 @@
+///////////////////
+// Global Styles //
+///////////////////
+
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+}
+
+[aria-hidden=true] {
+	display: none;
+}
+
+code,
+kbd,
+pre,
+samp {
+	font-family: $type-monospace;
+}
+
+
+
+
+
+
+// Extend helper extend-only classes into normal css classes.
+// Delete the extended classes if you don't intend to use them.
+// For documentation for individual classes, see core/_helpers.scss
+
+.sr-only {
+	@extend %sr-only;
+}
+
+.clearfix {
+	@extend %clearfix;
+}
+
+
+.hide {
+	display: none !important;
+}
+
+.invisible {
+	visibility: hidden;
+}
+
+
+.pull-left {
+	float: left;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+.btn-no-style {
+	@extend %btn-no-style;
+}
+
+.list-no-style {
+	@extend %list-no-style;
+}
+
+nav > ul {
+	@extend %list-no-style;
+}

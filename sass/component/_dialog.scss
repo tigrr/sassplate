@@ -1,0 +1,100 @@
+/* Modal dialog */
+.dialog-overlay {
+	position: fixed;
+	z-index: $z-layer-4;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background: rgba($clr-fg-1, .5);
+	visibility: hidden;
+	opacity: 0;
+	transition: $trans-norm;
+
+	&.open {
+		visibility: visible;
+		opacity: 1;
+	}
+}
+
+.dialog {
+	position: relative;
+	margin: 30px auto;
+	max-width: 500px;
+	transition: 0s $trans-norm;
+	background: $clr-bg;
+	border-radius: $bord-rad-md;
+	box-shadow: $box-shad-5;
+	@include maxscreen(sm) {
+		width: 100%;
+		max-width: initial;
+	}
+}
+
+.dialog-header,
+.dialog-body,
+.dialog-footer {
+	padding: $padd-md;
+	overflow: auto;
+}
+
+.dialog-header {
+	border-bottom: $bord-xs $clr-bg-2;
+}
+
+.dialog-footer {
+	border-top: $bord-xs $clr-bg-2;
+}
+
+.close {
+	@extend %btn-no-style;
+	float: right;
+	padding: $padd-xs;
+	opacity: .3;
+	color: $clr-fg;
+	font-weight: bold;
+
+	&:hover,
+	&:focus {
+		opacity: .6;
+	}
+
+	&::before {
+		content: "×";
+		font-size: 22px;
+	}
+}
+
+.dialog-footer {
+	text-align: right;
+
+	> button + button {
+		margin-left: $marg-md;
+	}
+}
+
+
+html.dialog-open {
+	overflow: hidden;
+}
+
+
+@include maxscreen(sm) {
+	.dialog {
+		width: 100%;
+		max-width: initial;
+		padding-left: $marg-sm;
+		padding-right: $marg-sm;
+	}
+}
+
+
+@include minscreen(md) {
+	.dialog-header,
+	.dialog-body,
+	.dialog-footer {
+		padding: $padd-md;
+	}
+}

@@ -1,0 +1,38 @@
+//////////////
+// Elements //
+//////////////
+
+p {}
+hr {}
+pre {}
+
+blockquote {
+	margin-left: 0;
+	@include logical(padding, inline-start, $marg-md, left);
+	@include logical(border, inline-start, solid 5px $clr-bg-4, left);
+}
+
+cite {}
+figure {}
+figcaption {}
+address {}
+em {}
+strong {}
+small {}
+s {}
+q {}
+dfn {}
+abbr {}
+time {}
+code {}
+var {}
+samp {}
+kbd {}
+sup {}
+sub {}
+i {}
+b {}
+u {}
+mark {}
+ins {}
+del {}

@@ -1,0 +1,32 @@
+// First import the core
+// This won't produce any css, but will only define the variables, functions, mixins and extend-only helper classes.
+@import "core/core";
+
+// Then import all the base files and components needed for this particular style
+// Basic styles included in all stylesheets
+@import "base/normalize";
+
+// Include your generic styles here from a separate file or inline
+@import "base/demo";
+
+// Component styles
+@import "component/elements";
+@import "component/table";
+@import "component/form";
+@import "component/heading";
+@import "component/link";
+@import "component/button";
+@import "component/progressbar";
+@import "component/tooltip";
+@import "component/nav";
+@import "component/radio-group";
+@import "component/range-input";
+@import "component/tabs";
+@import "component/dialog";
+@import "component/dropdown";
+@import "component/alert";
+@import "component/breadcrumb";
+
+// Layout partials
+@import "layout/header";
+@import "layout/footer";

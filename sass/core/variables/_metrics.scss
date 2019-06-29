@@ -1,0 +1,59 @@
+// =========
+//  METRICS
+// =========
+
+// Margins
+// Or fixed sizes. If you need relative sizes, use paddings.
+$marg-xs:               3px;
+$marg-sm:               10px;
+$marg-md:               25px;
+$marg-lg:               50px;
+$marg-xl:               100px;
+
+
+// Paddings
+// Or relative sizes. If you need fixed sizes, use margin values.
+// Vertical paddings
+$padd-v-xs:             .2em;
+$padd-v-sm:             .4em;
+$padd-v-md:             .8em;
+$padd-v-lg:             1.5em;
+$padd-v-xl:             3em;
+// Horizontal paddings
+$padd-h-xs:             .4em;
+$padd-h-sm:             .8em;
+$padd-h-md:             1.5em;
+$padd-h-lg:             3em;
+$padd-h-xl:             6em;
+// Shorthand paddings
+$padd-xs:               $padd-v-xs $padd-h-xs;
+$padd-sm:               $padd-v-sm $padd-h-sm;
+$padd-md:               $padd-v-md $padd-h-md;
+$padd-lg:               $padd-v-lg $padd-h-lg;
+$padd-xl:               $padd-v-xl $padd-h-xl;
+
+
+// Borders Widths
+// Borders are fixed sizes
+$bord-width-xs:         1px;
+$bord-width-sm:         2px;
+$bord-width-md:         4px;
+$bord-width-lg:         10px;
+$bord-width-xl:         20px;
+
+
+// Borders
+// Shorthand border declarations without color
+$bord-xs:               $bord-width-xs solid;
+$bord-sm:               $bord-width-sm solid;
+$bord-md:               $bord-width-md solid;
+$bord-lg:               $bord-width-lg solid;
+$bord-xl:               $bord-width-xl solid;
+
+
+// Border Radii
+$bord-rad-xs:           2px;
+$bord-rad-sm:           4px;
+$bord-rad-md:           8px;
+$bord-rad-lg:           15px;
+$bord-rad-xl:           30px;

@@ -1,0 +1,25 @@
+// ==========
+//  3D stuff
+// ==========
+
+// z-indices layers. The individual z-indices should be used as e.g. z-index: $z-layer-2 + 3;
+
+$z-layer-1:             100;
+$z-layer-dropdown:      100;
+$z-layer-2:             200;
+$z-layer-fixed:         200;
+$z-layer-3:             300;
+$z-layer-alert:         300;
+$z-layer-4:             400;
+$z-layer-dialog:        400;
+$z-layer-5:             500;
+$z-layer-tooltip:       500;
+// etc...
+
+// Box shadows
+$box-shad-1:            0 1px 3px rgba(0, 0, 0, .4);
+$box-shad-2:            0 2px 6px rgba(0, 0, 0, .4);
+$box-shad-3:            0 3px 9px 1px rgba(0, 0, 0, .4);
+$box-shad-4:            0 5px 15px 2px rgba(0, 0, 0, .5);
+$box-shad-5:            0 7px 25px 3px rgba(0, 0, 0, .6);
+// etc...

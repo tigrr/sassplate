@@ -1,0 +1,17 @@
+////////////////
+// Breadcrumb //
+////////////////
+
+.breadcrumb {
+	@extend %list-no-style;
+
+	li {
+		display: inline-block;
+
+		&:not(:last-child)::after {
+			content: "/";
+			padding: 0 $padd-h-sm;
+			color: $clr-fg-4;
+		}
+	}
+}

@@ -1,0 +1,293 @@
+// Animations
+// Android browser 4.4.4
+@mixin animation($animation) {
+	-webkit-animation: $animation;
+	        animation: $animation;
+}
+@mixin animation-name($name) {
+	-webkit-animation-name: $name;
+	        animation-name: $name;
+}
+@mixin animation-duration($duration) {
+	-webkit-animation-duration: $duration;
+	        animation-duration: $duration;
+}
+@mixin animation-timing-function($timing-function) {
+	-webkit-animation-timing-function: $timing-function;
+	        animation-timing-function: $timing-function;
+}
+@mixin animation-delay($delay) {
+	-webkit-animation-delay: $delay;
+	        animation-delay: $delay;
+}
+@mixin animation-iteration-count($iteration-count) {
+	-webkit-animation-iteration-count: $iteration-count;
+	        animation-iteration-count: $iteration-count;
+}
+@mixin animation-direction($direction) {
+	-webkit-animation-direction: $direction;
+	        animation-direction: $direction;
+}
+@mixin animation-fill-mode($fill-mode) {
+	-webkit-animation-fill-mode: $fill-mode;
+	        animation-fill-mode: $fill-mode;
+}
+@mixin keyframes($name) {
+	-webkit-keyframes #{$name} {
+		@content;
+	}
+	keyframes #{$name} {
+		@content;
+	}
+}
+
+// Transforms
+@mixin transform($transform) {
+	-webkit-transform: $transform;
+	        transform: $transform;
+}
+@mixin backface-visibility($visibility){
+	-webkit-backface-visibility: $visibility;
+	        backface-visibility: $visibility;
+}
+@mixin perspective($perspective) {
+	-webkit-perspective: $perspective;
+	        perspective: $perspective;
+}
+@mixin perspective-origin($perspective) {
+	-webkit-perspective-origin: $perspective;
+	        perspective-origin: $perspective;
+}
+@mixin transform-origin($origin) {
+	-webkit-transform-origin: $origin;
+	        transform-origin: $origin;
+}
+
+// Selected text background
+@mixin user-select($select) {
+	-webkit-user-select: $select;
+	   -moz-user-select: $select;
+	    -ms-user-select: $select;
+	        user-select: $select;
+}
+
+// Placeholder text
+@mixin placeholder() {
+	&:-ms-input-placeholder { // For IE. Edge supports -webkit-
+		@content;
+	}
+	&::-webkit-input-placeholder  {
+		@content;
+	}
+}
+
+// Optional hyphenation
+@mixin hyphens($mode: auto) {
+	word-wrap: break-word;
+	-webkit-hyphens: $mode;
+	    -ms-hyphens: $mode;
+	        hyphens: $mode;
+}
+
+@mixin writing-mode($value) {
+	-webkit-writing-mode: $value;
+	        writing-mode: $value;
+}
+
+// Logical properties that depend on writing-mode, direction and text-orientation
+// $property can be either of margin, padding or border
+// See http://caniuse.com/#feat=css-logical-props
+@mixin logical($property, $side, $value, $fallbackSide: false) {
+	$dict: (
+		block-start: before,
+		block-end: after,
+		inline-start: start,
+		inline-end: end
+	);
+	@if $fallbackSide {
+		@supports not ((-webkit-#{$property}-#{map-get($dict, $side)}: $value) or ( $property+-$side: $value )) {
+			#{$property}-#{$fallbackSide}: $value;
+		}
+	}
+	-webkit-#{$property}-#{map-get($dict, $side)}: $value;
+	        #{$property}-#{$side}: $value;
+}
+
+@mixin text-align($side) {
+	$dict: (
+		start: left,
+		end: right
+	);
+	text-align: map-get($side);
+	text-align: $side;
+}
+
+// Multi-column layout
+@mixin columns($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-width($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-count($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-gap($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-rule($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-rule-color($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-rule-style($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-rule-width($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-span($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+@mixin column-fill($value) {
+	-webkit-columns: $value;
+	        columns: $value;
+}
+
+// Selection
+@mixin selection() {
+	&::-moz-selection {
+		@content;
+	}
+	&::selection {
+		@content;
+	}
+}
+
+// Masking and clipping
+@mixin clip-path($path) {
+	-webkit-clip-path: $path;
+	        clip-path: $path;
+}
+@mixin clip-rule($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-image($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-mode($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-repeat($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-position($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-clip($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-origin($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-size($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-composite($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+
+@mixin mask-border($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-border-source($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-border-mode($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-border-slice($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-border-width($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-border-outset($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+@mixin mask-border-repeat($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+
+@mixin mask-type($value) {
+	-webkit-clip-path: $value;
+	        clip-path: $value;
+}
+
+
+@mixin clear-appearance($value) {
+	-webkit-appearance: none;
+	   -moz-appearance: $value;
+	        appearance: $value;
+}
+
+@mixin sticky() {
+	position: -webkit-sticky;
+	position: sticky;
+}
+
+@mixin text-orientation($value) {
+	-webkit-text-orientation: $value;
+	        text-orientation: $value;
+}
+
+@mixin max-content($prop) {
+	#{$prop}: -webkit-max-content;
+	#{$prop}: -moz-max-content;
+	#{$prop}: max-content;
+}
+@mixin min-content($prop) {
+	#{$prop}: -webkit-min-content;
+	#{$prop}: -moz-min-content;
+	#{$prop}: min-content;
+}
+@mixin fit-content($prop) {
+	#{$prop}: -webkit-fit-content;
+	#{$prop}: -moz-fit-content;
+	#{$prop}: fit-content;
+}
+@mixin stretch($prop) {
+	#{$prop}: -webkit-stretch;
+	#{$prop}: -moz-fill-available;
+	#{$prop}: stretch;
+}

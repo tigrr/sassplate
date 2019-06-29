@@ -1,0 +1,22 @@
+// Scrollbar styling only works in Webkit
+// To style scrollbars in other browsers, you can use a JS library, such as http://noraesae.github.io/perfect-scrollbar/
+%scrollbars {
+	@include minscreen(lg) {
+		&::-webkit-scrollbar {
+			width: 10px;
+		}
+
+		&::-webkit-scrollbar-track {
+			background: $clr-bg;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: $clr-prim;
+		}
+
+		&::-webkit-scrollbar-button {
+			height: 5px;
+			background: $clr-bg;
+		}
+	}
+}

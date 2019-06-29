@@ -1,0 +1,21 @@
+a {
+	color: $clr-link;
+	transition: $trans-fast;
+
+	&:hover,
+	&:focus {
+		color: $clr-link-hover;
+	}
+
+	&:focus {
+		outline: $bord-xs $clr-outline;
+	}
+
+	&:active {
+
+	}
+
+	&:visited {
+		color: $clr-link-visited;
+	}
+}

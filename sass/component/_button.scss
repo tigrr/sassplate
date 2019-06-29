@@ -1,0 +1,40 @@
+////////////
+// Button //
+////////////
+
+button,
+[type=button],
+[type="submit"],
+[type="reset"],
+.btn {
+	padding: $padd-sm;
+	background: $clr-bg-2;
+	border: $bord-xs $clr-bg-4;
+	outline: none;
+	color: $clr-fg;
+	transition: $trans-fast;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover,
+	&:focus {
+		background-color: $clr-bg-3;
+		border-color: $clr-bg-5;
+	}
+
+	&:focus {
+		border-color: $clr-outline;
+		box-shadow: 0 0 8px $clr-outline;
+	}
+
+	&:active {
+		background-color: $clr-bg-1;
+		border-color: $clr-bg-3;
+	}
+
+	&:disabled {
+		background-color: $clr-bg-1;
+		border-color: $clr-bg-2;
+		color: $clr-bg-5;
+	}
+}

@@ -1,0 +1,13 @@
+// Magic contrast
+// Produce a color whose lightness is distantiated from the $color by $distance percent.
+// For dark colors this will be a lighter color, for light colors - dark one.
+@function magicon($color, $distance: 100%) {
+	@return if(lightness($color) < 50, lighten($color, $distance), darken($color, $distance));
+}
+
+
+// Get url of an image
+// Requires "imgDir" variable to be set in "_variables.scss".
+@function img-url($img) {
+	@return unquote("url(" + quote($imgDir + $img) + ")");
+}

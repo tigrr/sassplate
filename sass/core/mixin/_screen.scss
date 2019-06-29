@@ -1,0 +1,39 @@
+// Default values
+$minscreen:	(
+	xs: 480px,
+	sm: 768px,
+	md: 992px,
+	lg: 1200px,
+	xl: 1600px
+) !default;
+
+$maxscreen:	(
+	xs: 480px - 1,
+	sm: 768px - 1,
+	md: 992px - 1,
+	lg: 1200px - 1,
+	xl: 1600px - 1
+) !default;
+
+
+// Mix in styles for minimum screen width of $size. Translates to @media screen and (min-width: $size)
+@mixin minscreen($size) {
+	@if not map-has-key($minscreen, $size) {
+		@error "Screen size \"#{$size}\" doesn't exist";
+	}
+
+	@media screen and (min-width: map-get($minscreen, $size)) {
+		@content;
+	}
+}
+
+// Mix in styles for maximum screen width of $size. Translates to @media screen and (max-width: $size)
+@mixin maxscreen($size) {
+	@if not map-has-key($maxscreen, $size) {
+		@error "Screen size \"#{$size}\" doesn't exist";
+	}
+
+	@media screen and (max-width: map-get($maxscreen, $size)) {
+		@content;
+	}
+}

@@ -1,0 +1,63 @@
+//////////
+// Tabs //
+//////////
+
+// Inctroduces classes: "tabs", "tabs-nav", "tabs-tab", "tabs-panel", "active".
+// Affects elements with those classes and some of their descendants.
+
+// Variables
+$tabs-border-color:                      $clr-fg-4;
+$tabs-tab-margin:                        $marg-xs;
+$tabs-tab-hover-border-color:            transparent;
+$tabs-tab-color:                         $clr-bg-2;
+$tabs-active-tab-color:                  $clr-bg;
+$tabs-active-tab-hover-color:            $clr-bg-2;
+$tabs-active-tab-hover-bg-color:         $clr-bg-2;
+$tabs-active-tab-hover-border-color:     $clr-bg-2;
+
+// Styles
+.tabs {
+	position: relative;
+	z-index: 0;
+}
+
+.tabs-nav {
+	display: flex;
+}
+
+.tabs-tab {
+	// Make the list-items overlay the bottom border
+	margin-bottom: -1px;
+	margin-right: $tabs-tab-margin;
+	border: $bord-xs transparent;
+	border-radius: $bord-rad-sm $bord-rad-sm 0 0;
+
+	&:hover {
+		border-color: $tabs-tab-hover-border-color $tabs-tab-hover-border-color $tabs-tab-color;
+	}
+
+	&:focus {
+		border-color: transparent;
+		box-shadow: none;
+	}
+
+	// Active state, and its :hover to override normal :hover
+	&.active {
+		position: relative;
+		z-index: 1;
+		background-color: $tabs-active-tab-color;
+		border-color: $tabs-border-color;
+		border-bottom-color: transparent;
+		cursor: default;
+
+		&:focus {
+			color: $clr-outline;
+		}
+	}
+}
+
+.tabs-panel {
+	transform: translateZ(0);
+	padding: $padd-sm;
+	border: $bord-xs $tabs-border-color;
+}

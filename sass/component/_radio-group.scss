@@ -1,0 +1,97 @@
+/////////////////
+// Radio Group //
+/////////////////
+
+// Adds extend-only selectors: %radio-group, %radio-group-vertical.
+// Uses $tooltip-padding, $tooltip-background-color, $tooltip-text-color, $tooltip-transition-duration
+// Default radio group layout is horizontal.
+
+// Variables
+$radio-group-button-padding:                $padd-sm;
+$radio-group-button-bg-color:               $clr-bg-3;
+$radio-group-button-border:                 $bord-xs;
+$radio-group-button-border-color:           $clr-bg-5;
+$radio-group-border-radius:                 $bord-rad-sm;
+$radio-group-text-color:                    $clr-fg-3;
+
+$radio-group-focus-outline-color:           $clr-outline;
+
+$radio-group-button-hover-bg-color:         $clr-bg-4;
+$radio-group-button-hover-border-color:     $clr-bg-6;
+$radio-group-hover-text-color:              $clr-fg-4;
+
+$radio-group-button-checked-bg-color:       $clr-bg-2;
+$radio-group-button-checked-border-color:   $clr-bg-4;
+$radio-group-checked-text-color:            $clr-fg-6;
+
+// Styles
+%radio-group {
+	> input[type=radio],
+	> input[type=checkbox] {
+		@extend %sr-only;
+	}
+
+	> label,
+	> button,
+	> input[type=button] {
+		float: left;
+		margin: 0;
+		padding: $radio-group-button-padding;
+		@include linear-gradient-around(bottom, $radio-group-button-bg-color, 15%);
+		border: $radio-group-button-border $radio-group-button-border-color;
+		color: $radio-group-text-color;
+		cursor: pointer;
+
+		&:hover {
+			@include linear-gradient-around(bottom, $radio-group-button-hover-bg-color, 15%);
+			border-color: $radio-group-button-hover-border-color;
+			color: $radio-group-hover-text-color;
+		}
+
+		&:first-of-type {
+			border-radius: $radio-group-border-radius 0 0 $radio-group-border-radius;
+		}
+
+		&:last-of-type {
+			border-radius: 0 $radio-group-border-radius $radio-group-border-radius 0;
+		}
+	}
+
+	> :focus {
+		+ label,
+		+ button,
+		+ input[type=button] {
+			outline: $bord-xs $radio-group-focus-outline-color;
+		}
+	}
+
+	> :checked {
+		+ label,
+		+ button,
+		+ input[type=button] {
+			background: $radio-group-button-checked-bg-color;
+			border-color: $radio-group-button-checked-border-color;
+			color: $radio-group-checked-text-color;
+		}
+	}
+}
+
+%radio-group-vertical {
+	@extend %radio-group;
+	display: inline-block;
+
+	> label,
+	> button,
+	> input[type=button] {
+		display: block;
+		float: none;
+
+		&:first-of-type {
+			border-radius: $radio-group-border-radius $radio-group-border-radius 0 0;
+		}
+
+		&:last-of-type {
+			border-radius: 0 0 $radio-group-border-radius $radio-group-border-radius;
+		}
+	}
+}

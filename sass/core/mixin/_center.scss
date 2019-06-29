@@ -1,0 +1,12 @@
+// Center-align a block level element
+@mixin center-block() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Center content
+@mixin flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

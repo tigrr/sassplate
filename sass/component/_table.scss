@@ -1,0 +1,23 @@
+table {
+	border-collapse: collapse;
+}
+
+caption {
+	padding: $padd-md;
+	font-weight: bold;
+	color: $clr-fg-3;
+}
+
+th,
+td {
+	padding: $padd-md;
+	border: $bord-xs $clr-bg-3;
+}
+
+th {
+	background: $clr-bg-2;
+}
+
+td {
+	background: $clr-bg-1;
+}

@@ -1,0 +1,61 @@
+// Forms
+
+$input-padding:                $padd-h-sm;
+$input-bg:                     $clr-body-bg;
+$input-border-color:           $clr-fg-5;
+$input-focus-border-color:     $clr-outline;
+$input-text-color:             $clr-body-text;
+$input-placeholder-color:      $clr-bg-5;
+
+
+[type=text],
+[type=search],
+[type=datetime],
+[type=date],
+[type=time],
+[type=datetime-local],
+[type=email],
+[type=URL],
+[type=password],
+[type=tel],
+[type=month],
+[type=week],
+[type=number],
+textarea,
+select {
+	padding: $input-padding;
+	background: $input-bg;
+	border: $bord-xs $input-border-color;
+	outline: none;
+	color: $input-text-color;
+	transition: $trans-fast;
+	transition-property: border-color, box-shadow;
+	border-radius: $bord-rad-xs;
+	@include placeholder() {
+		color: $input-placeholder-color;
+	};
+
+	&:focus {
+		border-color: $input-focus-border-color;
+		box-shadow: 0 0 8px $input-focus-border-color;
+	}
+}
+
+[type=radio],
+[type=checkbox],
+[type=range],
+[type=color],
+[type=file] {
+	&:focus {
+		outline: $bord-xs $input-focus-border-color;
+		box-shadow: 0 0 8px $input-focus-border-color;
+	}
+}
+
+textarea {
+	resize: vertical;
+}
+
+label {
+	font-weight: bold;
+}
