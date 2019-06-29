@@ -89,4 +89,5 @@ Two mixins are available to use in conjuntion with these breakpoints: `minscreen
 © 2018 Tigran Sargsyan
 
 Licensed under ([the MIT License][license])
+
 [license]: https://github.com/tigrr/sassplate/blob/master/LICENSE
