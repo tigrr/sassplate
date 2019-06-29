@@ -85,4 +85,8 @@ To make the use of media query breakpoints easier, `core/mixins/_screen.scss` de
 
 Two mixins are available to use in conjuntion with these breakpoints: `minscreen($size)` and `maxscreen($size)`, where `$size` is either `xs`, `sm`, `md`, `lg` or `xl`. You can define the values in `core/_variables.scss`.
 
+## License
+© 2018 Tigran Sargsyan
 
+Licensed under ([the MIT License][license])
+[license]: https://github.com/tigrr/sassplate/blob/master/LICENSE
